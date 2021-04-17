@@ -14,59 +14,48 @@ public class Task1 {
 
         System.out.println("Введите год выпуска , цвет и модель автомобиля : ");
         Scanner scanner = new Scanner(System.in);
-
-
-        Scanner scanner1 = new Scanner(System.in);
-
-
-        Scanner scanner2 = new Scanner(System.in);
-
-        int o= scanner.nextInt();
-        String b= scanner1.nextLine();
-        String c= scanner2.nextLine();
-
-
         Car car1 = new Car();
+        int o = scanner.nextInt();
+
+        String b = scanner.nextLine();
+        String c = scanner.nextLine();
+
         car1.setYear(o);
         car1.setCollor(b);
         car1.setModels(c);
-
-        System.out.println(car1.getYear() + " "+ car1.getModels() +" "+ car1.getCollor());
-
-
+        System.out.println(car1.getYear() + " " + car1.getModels() + " " + car1.getCollor());
 
     }
 }
-    class Car{
 
-        private int year;
+class Car {
 
-        public void setYear(int year1) {
-            this.year = year1;
-        }
+    private int year;
+    private String collor;
+    private String models;
 
-        public int getYear() {
-            return year;
-        }
-
-        private String collor;
-
-        public void setCollor(String collor1) {
-            this.collor = collor1;
-        }
-
-        public String getCollor() {
-            return collor;
-        }
-
-        private String models;
-
-        public void setModels(String models1) {
-             models= models1;
-        }
-
-        public String getModels() {
-            return models;
-        }
+    public void setYear(int year1) {
+        this.year = year1;
     }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setCollor(String collor1) {
+        this.collor = collor1;
+    }
+
+    public String getCollor() {
+        return collor;
+    }
+
+    public void setModels(String models1) {
+        models = models1;
+    }
+
+    public String getModels() {
+        return models;
+    }
+}
 

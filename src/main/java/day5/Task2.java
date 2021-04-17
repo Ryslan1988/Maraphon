@@ -15,33 +15,30 @@ public class Task2 {
     }
 }
 
-    class Motorbike{
+class Motorbike {
 
-           private int year;
-           private String collors;
-           private String models;
+    private int year;
+    private String collors;
+    private String models;
 
-           Motorbike(int year, String collors, String models){
-           this.year = year;
-           this.collors=collors;
-           this.models=models;
-               System.out.println(getYear() + ","+ getCollors() + ","+ getModels());
-}
-        public int getYear() {
-            return year;
-        }
-
-
-        public String getCollors() {
-            return collors;
-        }
-
-
-        public String getModels() {
-            return models;
-           }
-
+    Motorbike(int year, String collors, String models) {
+        this.year = year;
+        this.collors = collors;
+        this.models = models;
+        System.out.println(getYear() + "," + getCollors() + "," + getModels());
     }
+
+    public int getYear() {
+        return year;
+    }
+    public String getCollors() {
+        return collors;
+    }
+    public String getModels() {
+        return models;
+    }
+
+}
 
 
 
