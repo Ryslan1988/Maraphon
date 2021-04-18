@@ -21,27 +21,48 @@
 
 package day7;
 
-public class Task2 {
-    public static void main(String[] args) {
-        Player player1 = new Player(90);
-        Player player2 = new Player(95);
-        Player player3 = new Player(91);
+import java.lang.reflect.Field;
 
-        Player.info();
+public class Player {
 
-        Player player4 = new Player(93);
-        Player player5 = new Player(100);
-        Player player6 = new Player(98);
+    public int stamina;
 
-        Player.info();
 
-        Player player7 = new Player(90);
+    public final int MAX_STAMINA = 100;
+    public final int MIN_STAMINA = 0;
+    private static int countPlayers;
 
-        Player.info();
+    public int getStamina() {
+        return stamina;
+    }
 
-        for (int i = 0; i < 96; i++)
-            player2.run();
+    public static int getCountPlayers() {
+        return countPlayers;
+    }
 
-        Player.info();
+    public Player(int stamina) {
+        this.stamina = stamina;
+
+        if (countPlayers < 6)
+            countPlayers++;
+    }
+
+    public void run() {
+        if (stamina == 0)
+            return;
+
+        stamina--;
+
+        if (stamina == 0)
+            countPlayers--;
+    }
+
+    public static void info() {
+        if (countPlayers < 6) {
+            System.out.println("Команды неполные. На поле еще есть " + (6 - countPlayers) + " свободных мест");
+        } else {
+            System.out.println("На поле нет свободных мест");
+        }
+
     }
 }
